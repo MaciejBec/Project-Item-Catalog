@@ -5,22 +5,14 @@ You will develop an application that provides a list of items within a variety o
 
 
 
-## Technologies
-
-- the virtual machine
-- vagrant 
-- psycopg2 
-
 ## Setup 
-- [newsdat.sql](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) 
-- vagrant up
-- vagrant ssh
-- sudo su - postgres
-- psql 
-- psql -d news -f newsdata.sql
-- \ctest 
+- flask 
+- requests
+- google-api-python-client
+- flask-sqlalchemy
+- flask-wtf
+- psycopg2
 
 ## Run
 
-- python3 project_logs_analysis.py or
-- ./project_logs_analysis.py
+- setup_database.py 
