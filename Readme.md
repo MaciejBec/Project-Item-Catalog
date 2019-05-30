@@ -1,42 +1,9 @@
-# Project-Logs-Analysis
+# Project-Item-Catalog
 
-This is Project Logs Analysis for udacity.com for Full Stack Web Developer Nanodegree. Your task is to creat a reporting tool that prints out reports. Reporting based on tables in PostgreSQL database. 
-
-## Question:
-
-## 1. What are the most popular three articles of all time?
-Which articles have been accessed the most? Present this information as a sorted list with the most popular article at the top.
+This is Project Item Catalog for udacity.com for Full Stack Web Developer Nanodegree. 
+You will develop an application that provides a list of items within a variety of categories as well as provide a user registration and authentication system. Registered users will have the ability to post, edit and delete their own items.
 
 
-Example:
-
-"Princess Shellfish Marries Prince Handsome" — 1201 views
-
-"Baltimore Ravens Defeat Rhode Island Shoggoths" — 915 views
-
-"Political Scandal Ends In Political Scandal" — 553 views
-
-
-## 2. Who are the most popular article authors of all time? 
-That is, when you sum up all of the articles each author has written, which authors get the most page views? Present this as a sorted list with the most popular author at the top.
-
-Example:
-
-Ursula La Multa — 2304 views
-
-Rudolf von Treppenwitz — 1985 views
-
-Markoff Chaney — 1723 views
-
-Anonymous Contributor — 1023 views
-
-
-## 3. On which days did more than 1% of requests lead to errors? 
-The log table includes a column status that indicates the HTTP status code that the news site sent to the user's browser. (Refer to this lesson for more information about the idea of HTTP status codes.)
-
-Example:
-
-July 29, 2016 — 2.5% errors
 
 ## Technologies
 
@@ -57,5 +24,3 @@ July 29, 2016 — 2.5% errors
 
 - python3 project_logs_analysis.py or
 - ./project_logs_analysis.py
-
-## Output
