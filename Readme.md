@@ -11,13 +11,23 @@ You will develop an application that provides a list of items within a variety o
 
 Install Python 
 - sudo apt-get install python3
-
 Setup Virtual Programming Environment for Python3
-- 
+- sudo apt-get install build
+Setup Virtual Programming Environment for Python3
+Step 1: Install the Prerequisites
+- sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+Step 2: Install pip3 if it is already not installed on your system
+- pip3 -V
+- sudo apt-get update
+- sudo apt install python3-pip
+- pip3 install
+Step 3: Create a virtual environment through Python3-venv
+- sudo apt install -y python3-venv
+Step 4: Activate the Python Virtual Environment
 
-
+Step 5: 
+- setup_database.py
 Open the browser and go to http://localhost:5000
-
 
 ## Setup 
 - flask 
@@ -27,6 +37,4 @@ Open the browser and go to http://localhost:5000
 - flask-wtf
 - psycopg2
 
-## Run
 
-- setup_database.py 
