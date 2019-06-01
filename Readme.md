@@ -18,7 +18,7 @@ Setup Virtual Programming Environment for Python3
 Step 1: Install the Prerequisites
 - sudo apt-get install build-essential libssl-dev libffi-dev python-dev
 
-tep 2: Install pip3 if it is already not installed on your system
+Step 2: Install pip3 if it is already not installed on your system
 - pip3 -V
 - sudo apt-get update
 - sudo apt install python3-pip
