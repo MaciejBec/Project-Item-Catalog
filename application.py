@@ -4,7 +4,8 @@ from collections import defaultdict
 from functools import wraps
 
 import requests
-from flask import Flask, render_template, request, make_response, session, jsonify, url_for
+from flask import Flask, render_template, request, make_response, session, jsonify, \
+    url_for
 from flask_sqlalchemy import SQLAlchemy
 from google.auth.transport import requests as google_requests
 from google.oauth2 import id_token
@@ -61,7 +62,8 @@ def login():
 
         # Request an access token from the google api
         idinfo = id_token.verify_oauth2_token(token, google_requests.Request(), CLIENT_ID)
-        url = 'https://oauth2.googleapis.com/tokeninfo?id_token=%s' % token.decode(encoding='utf-8')
+        url = 'https://oauth2.googleapis.com/tokeninfo?id_token=%s' % token.decode(
+            encoding='utf-8')
         result = requests.get(url).json()
 
         # If there was an error in the access token info, abort.
@@ -73,13 +75,15 @@ def login():
         # Verify that the access token is used for the intended user.
         user_google_id = idinfo['sub']
         if result['sub'] != user_google_id:
-            response = make_response(json.dumps("Token's user ID doesn't match given user ID."), 401)
+            response = make_response(
+                json.dumps("Token's user ID doesn't match given user ID."), 401)
             response.headers['Content-Type'] = 'application/json'
             return response
 
         # Verify that the access token is valid for this app.
         if result['aud'] != CLIENT_ID:
-            response = make_response(json.dumps("Token's client ID does not match app's."), 401)
+            response = make_response(
+                json.dumps("Token's client ID does not match app's."), 401)
             response.headers['Content-Type'] = 'application/json'
             return response
 
@@ -87,7 +91,8 @@ def login():
         stored_access_token = session.get('access_token')
         stored_user_google_id = session.get('user_google_id')
         if stored_access_token and user_google_id == stored_user_google_id:
-            response = make_response(json.dumps('Current user is already connected.'), 200)
+            response = make_response(json.dumps('Current user is already connected.'),
+                                     200)
             response.headers['Content-Type'] = 'application/json'
             return response
 
@@ -151,7 +156,8 @@ def add_item():
     return render_template("add_item.html", form=form)
 
 
-@app.route("/category/<string:category>/<string:title>/edit-item", methods=["GET", "POST"])
+@app.route("/category/<string:category>/<string:title>/edit-item",
+           methods=["GET", "POST"])
 @login_required
 def edit_item(category, title):
     from models import Item, Category
