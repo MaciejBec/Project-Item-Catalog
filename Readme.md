@@ -25,20 +25,15 @@ Step 2: Install pip3 if it is already not installed on your system
 - pip3 install
 
 Step 3: Create a virtual environment through Python3-venv
-- sudo apt install -y python3-venv
+- python3 -m venv <tutaj nazwa srodwiska>
 
 Step 4: Activate the Python Virtual Environment
+- source <nazwa twojego srodowiska>/bin/activate
+
+Step 5 Install project dependencies:
+- pip install -r requirements.txt
 
 Step 5: 
 - setup_database.py
 Open the browser and go to http://localhost:5000
-
-## Setup 
-- flask 
-- requests
-- google-api-python-client
-- flask-sqlalchemy
-- flask-wtf
-- psycopg2
-
 

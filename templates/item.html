@@ -2,27 +2,32 @@
 {% block main %}
 
 
-<div class="container">
-<div class="col">
-    <h2>Items</h2>
-    <div class="row">
+    <div class="container">
         <div class="col">
-            <p>
-            {{ item.title }}
-            </p>
-        </div>
-        <div class="col">
-            <p>
-            {{ item.description }}
-            </p>
+            <h2>Items</h2>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        {{ item.title }}
+                    </p>
+                </div>
+                <div class="col">
+                    <p>
+                        {{ item.description }}
+                    </p>
+                </div>
+            </div>
+            {% if session.get('user_google_id') and item.author != session.get('user_google_id') %}
+                <p style="color: red">You are not allowed to modify/delete items created by
+                    someone else!</p>
+            {% elif session.get('user_google_id') == item.author %}
+                <a href="/category/{{ item.category.name }}/{{ item.title }}/edit-item"
+                   role="button" class="btn btn-danger">Edit</a>
+                <a href="/category/{{ item.category.name }}/{{ item.title }}/delete"
+                   role="button" class="btn btn-info">Delete</a>
+            {% endif %}
         </div>
     </div>
-     {% if session.get('user_google_id') %}
-    <a href="/category/{{ item.category.name }}/{{ item.title }}/edit-item" role="button" class="btn btn-danger">Edit</a>
-    <a href="/category/{{ item.category.name }}/{{ item.title }}/delete" role="button" class="btn btn-info">Delete</a>
-    {% endif %}
-</div>
-</div>
 
 
 {% endblock %}

@@ -1,4 +1,4 @@
-from application import db
+from settings import db
 
 
 def populate_db():
@@ -15,7 +15,7 @@ def populate_db():
     cat9 = models.Category('Fast food')
     cat10 = models.Category('Tapas bar')
     cat11 = models.Category('Steakhouse')
-
+    cat12 = models.Category('Food truck')
 
     db.session.add(cat1)
     db.session.add(cat2)
@@ -28,7 +28,7 @@ def populate_db():
     db.session.add(cat9)
     db.session.add(cat10)
     db.session.add(cat11)
-
+    db.session.add(cat12)
 
     db.session.commit()
 

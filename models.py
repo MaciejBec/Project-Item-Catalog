@@ -1,4 +1,4 @@
-from application import db
+from settings import db
 
 
 class Category(db.Model):
@@ -29,11 +29,13 @@ class Item(db.Model):
     cat_id = db.Column(db.Integer, db.ForeignKey('categories.id'))
     description = db.Column(db.String(100), nullable=False, unique=True)
     title = db.Column(db.String(40), nullable=False, unique=True)
+    author = db.Column(db.String(80), nullable=False)
 
-    def __init__(self, cat_id, description, title):
+    def __init__(self, cat_id, description, title, author):
         self.cat_id = cat_id
         self.description = description
         self.title = title
+        self.author = author
 
     @property
     def serialize(self):
